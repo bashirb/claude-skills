@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "bashir-skills",
+      "name": "bashirb-skills",
       "description": "All available skills in this collection",
       "source": "./",
       "strict": false,
