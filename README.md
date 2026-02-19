@@ -84,6 +84,66 @@ Key rules:
 
 See Anthropic's [agent skills spec](https://github.com/anthropics/skills/blob/main/spec/agent-skills-spec.md) for the full specification.
 
+## Plugin command reference
+
+**Marketplace**
+
+```
+# Add
+/plugin marketplace add bashirb/claude-skills            # from GitHub
+/plugin marketplace add https://gitlab.com/org/repo.git  # from other git host
+/plugin marketplace add ./local/path                     # from local directory
+
+# Update / Remove
+/plugin marketplace update bashirb-claude-skills
+/plugin marketplace remove bashirb-claude-skills
+/plugin marketplace list
+```
+
+**Install plugins**
+
+```
+# Interactive (lets you choose scope)
+/plugin
+
+# Direct install — defaults to user scope
+/plugin install bashirb-skills@bashirb-claude-skills
+
+# Explicit scope via terminal
+claude plugin install bashirb-skills@bashirb-claude-skills --scope user
+claude plugin install bashirb-skills@bashirb-claude-skills --scope project
+claude plugin install bashirb-skills@bashirb-claude-skills --scope local
+```
+
+**Uninstall / Disable**
+
+```
+/plugin uninstall bashirb-skills@bashirb-claude-skills
+/plugin disable bashirb-skills@bashirb-claude-skills
+/plugin enable bashirb-skills@bashirb-claude-skills
+
+# Scope-specific uninstall via terminal
+claude plugin uninstall bashirb-skills@bashirb-claude-skills --scope user
+claude plugin uninstall bashirb-skills@bashirb-claude-skills --scope local
+claude plugin uninstall bashirb-skills@bashirb-claude-skills --scope project
+```
+
+**Scopes**
+
+| Scope | Who | Shared via git | Use case |
+|---|---|---|---|
+| `user` | You, all projects | No | Personal tools across all your work |
+| `project` | Everyone on the repo | Yes (`.claude/settings.json`) | Team-wide plugins |
+| `local` | You, this repo only | No | Personal override for one repo |
+
+**Nuclear option if things get broken**
+
+```bash
+rm -rf ~/.claude/plugins/cache
+```
+
+Then reinstall via `/plugin install`.
+
 ## Contributing
 
 1. Fork this repo
