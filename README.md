@@ -32,13 +32,13 @@ description: What this skill does and when Claude should use it.
 Register this repo as a plugin marketplace, then install:
 
 ```
-/plugin marketplace add bashir/claude-skills
+/plugin marketplace add bashirb/claude-skills
 ```
 
 Then browse and install from the menu, or install directly:
 
 ```
-/plugin install all-skills@bashir-claude-skills
+/plugin install all-skills@bashirb-claude-skills
 ```
 
 ### Install a single skill manually
