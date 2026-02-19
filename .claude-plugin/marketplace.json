@@ -1,0 +1,22 @@
+{
+  "name": "bashir-claude-skills",
+  "owner": {
+    "name": "Bashir Bashir",
+    "email": ""
+  },
+  "metadata": {
+    "description": "A curated collection of Claude Code skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "all-skills",
+      "description": "All available skills in this collection",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/pr-review"
+      ]
+    }
+  ]
+}
