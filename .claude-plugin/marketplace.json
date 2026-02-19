@@ -16,6 +16,9 @@
       "strict": false,
       "skills": [
         "./skills/pr-review"
+      ],
+      "agents": [
+        "./agents/code-reviewer.md"
       ]
     }
   ]
