@@ -38,7 +38,7 @@ Register this repo as a plugin marketplace, then install:
 Then browse and install from the menu, or install directly:
 
 ```
-/plugin install all-skills@bashirb-claude-skills
+/plugin install bashir-skills@bashirb-claude-skills
 ```
 
 ### Install a single skill manually
