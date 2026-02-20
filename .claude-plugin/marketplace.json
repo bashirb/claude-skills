@@ -1,5 +1,5 @@
 {
-  "name": "bashirb-claude-skills",
+  "name": "bashirb-claude-kit",
   "owner": {
     "name": "Bashir Bashir",
     "email": ""
@@ -10,7 +10,7 @@
   },
   "plugins": [
     {
-      "name": "bashirb-skills",
+      "name": "bashirb-claude-kit",
       "description": "All available skills in this collection",
       "source": "./",
       "strict": false,

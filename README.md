@@ -17,7 +17,7 @@ my-skill/
 ## Repo structure
 
 ```
-claude-skills/
+claude-kit/
 ├── .claude/
 │   ├── agents/       # Subagents Claude can spawn
 │   ├── skills/       # Invocable skills
@@ -47,13 +47,13 @@ description: What this skill does and when Claude should use it.
 Register this repo as a plugin marketplace, then install:
 
 ```
-/plugin marketplace add bashirb/claude-skills
+/plugin marketplace add bashirb/claude-kit
 ```
 
 Then browse and install from the menu, or install directly:
 
 ```
-/plugin install bashirb-skills@bashirb-claude-skills
+/plugin install bashirb-claude-kit@bashirb-claude-kit
 ```
 
 ### Install manually
@@ -133,13 +133,13 @@ See Anthropic's [agent skills spec](https://github.com/anthropics/skills/blob/ma
 
 ```
 # Add
-/plugin marketplace add bashirb/claude-skills            # from GitHub
+/plugin marketplace add bashirb/claude-kit            # from GitHub
 /plugin marketplace add https://gitlab.com/org/repo.git  # from other git host
 /plugin marketplace add ./local/path                     # from local directory
 
 # Update / Remove
-/plugin marketplace update bashirb-claude-skills
-/plugin marketplace remove bashirb-claude-skills
+/plugin marketplace update bashirb-claude-kit
+/plugin marketplace remove bashirb-claude-kit
 /plugin marketplace list
 ```
 
@@ -150,25 +150,25 @@ See Anthropic's [agent skills spec](https://github.com/anthropics/skills/blob/ma
 /plugin
 
 # Direct install — defaults to user scope
-/plugin install bashirb-skills@bashirb-claude-skills
+/plugin install bashirb-claude-kit@bashirb-claude-kit
 
 # Explicit scope via terminal
-claude plugin install bashirb-skills@bashirb-claude-skills --scope user
-claude plugin install bashirb-skills@bashirb-claude-skills --scope project
-claude plugin install bashirb-skills@bashirb-claude-skills --scope local
+claude plugin install bashirb-claude-kit@bashirb-claude-kit --scope user
+claude plugin install bashirb-claude-kit@bashirb-claude-kit --scope project
+claude plugin install bashirb-claude-kit@bashirb-claude-kit --scope local
 ```
 
 **Uninstall / Disable**
 
 ```
-/plugin uninstall bashirb-skills@bashirb-claude-skills
-/plugin disable bashirb-skills@bashirb-claude-skills
-/plugin enable bashirb-skills@bashirb-claude-skills
+/plugin uninstall bashirb-claude-kit@bashirb-claude-kit
+/plugin disable bashirb-claude-kit@bashirb-claude-kit
+/plugin enable bashirb-claude-kit@bashirb-claude-kit
 
 # Scope-specific uninstall via terminal
-claude plugin uninstall bashirb-skills@bashirb-claude-skills --scope user
-claude plugin uninstall bashirb-skills@bashirb-claude-skills --scope local
-claude plugin uninstall bashirb-skills@bashirb-claude-skills --scope project
+claude plugin uninstall bashirb-claude-kit@bashirb-claude-kit --scope user
+claude plugin uninstall bashirb-claude-kit@bashirb-claude-kit --scope local
+claude plugin uninstall bashirb-claude-kit@bashirb-claude-kit --scope project
 ```
 
 **Scopes**
