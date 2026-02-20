@@ -14,6 +14,9 @@
       "description": "All available skills in this collection",
       "source": "./",
       "strict": false,
+      "commands": [
+        "./.claude/commands/primer.md"
+      ],
       "skills": [
         "./.claude/skills/pr-review"
       ],
@@ -21,7 +24,21 @@
         "./.claude/agents/code-reviewer.md",
         "./.claude/agents/documentation-manager.md",
         "./.claude/agents/validation-agent.md"
-      ]
+      ],
+      "hooks": {
+        "PostToolUse": [
+          {
+            "matcher": "Edit|Write|MultiEdit",
+            "hooks": [
+              {
+                "type": "command",
+                "command": "${CLAUDE_PLUGIN_ROOT}/.claude/hooks/log-tool.sh",
+                "description": "Automatically logs file edits"
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/log-tool.sh",
+            "description": "Automatically logs file edits"
+          }
+        ]
+      }
+    ]
+  }
+}
