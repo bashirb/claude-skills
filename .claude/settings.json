@@ -7,7 +7,8 @@
           {
             "type": "command",
             "command": ".claude/hooks/log-tool.sh",
-            "description": "Automatically logs file edits"
+            "description": "Automatically logs file edits",
+            "async": true
           }
         ]
       }

@@ -33,7 +33,8 @@
               {
                 "type": "command",
                 "command": "${CLAUDE_PLUGIN_ROOT}/.claude/hooks/log-tool.sh",
-                "description": "Automatically logs file edits"
+                "description": "Automatically logs file edits",
+                "async": true
               }
             ]
           }
