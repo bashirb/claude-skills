@@ -17,7 +17,6 @@
       "skills": [
         "./.claude/skills/pr-review"
       ],
-      // should be updated everytime we add a new agent
       "agents": [
         "./.claude/agents/code-reviewer.md",
         "./.claude/agents/documentation-manager.md",
