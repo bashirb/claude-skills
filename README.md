@@ -14,6 +14,21 @@ my-skill/
 └── assets/           # Optional. Templates, fonts, or other static files.
 ```
 
+## Repo structure
+
+```
+claude-skills/
+├── .claude/
+│   ├── agents/       # Subagents Claude can spawn
+│   ├── skills/       # Invocable skills
+│   └── settings.local.json
+├── .claude-plugin/
+│   └── marketplace.json
+└── template/         # Starter template for new skills
+```
+
+The `.claude/` folder mirrors the directory structure Claude Code uses locally. To manually install everything, copy it into your project root or `~/`.
+
 The `SKILL.md` file uses YAML frontmatter:
 
 ```markdown
@@ -41,19 +56,23 @@ Then browse and install from the menu, or install directly:
 /plugin install bashirb-skills@bashirb-claude-skills
 ```
 
-### Install a single skill manually
+### Install manually
 
-Copy a skill directory into one of these locations:
-
-| Location | Path | Scope |
-|---|---|---|
-| Personal | `~/.claude/skills/<skill-name>/` | All your projects |
-| Project | `.claude/skills/<skill-name>/` | Current project only |
-
-Example — install `pr-review` for all your projects:
+Copy the `.claude/` folder into your project root (project scope) or `~/` (user scope):
 
 ```bash
-cp -r skills/pr-review ~/.claude/skills/
+# Project scope — available in this repo only
+cp -r .claude/agents .claude/skills /your-project/.claude/
+
+# User scope — available across all your projects
+cp -r .claude/agents ~/.claude/
+cp -r .claude/skills ~/.claude/
+```
+
+Or install a single skill:
+
+```bash
+cp -r .claude/skills/pr-review ~/.claude/skills/
 ```
 
 ### Invoke a skill
@@ -79,14 +98,22 @@ Review src/auth.ts for security issues
 **By explicit reference** — mention the agent file directly to be specific:
 
 ```
-@agents/code-reviewer.md review this file
+@.claude/agents/code-reviewer.md review this file
 ```
 
 ## Skills in this repo
 
 | Skill | Description |
 |---|---|
-| [pr-review](./skills/pr-review/) | Review a pull request for correctness, clarity, and potential issues |
+| [pr-review](./.claude/skills/pr-review/) | Review a pull request for correctness, clarity, and potential issues |
+
+## Agents in this repo
+
+| Agent | Description |
+|---|---|
+| [code-reviewer](./.claude/agents/code-reviewer.md) | Reviews code for correctness, security, and maintainability |
+| [documentation-manager](./.claude/agents/documentation-manager.md) | Keeps documentation in sync with code changes |
+| [validation-agent](./.claude/agents/validation-agent.md) | Runs tests and validation gates, iterates until all pass |
 
 ## Creating a skill
 
@@ -163,6 +190,7 @@ Then reinstall via `/plugin install`.
 ## Contributing
 
 1. Fork this repo
-2. Copy `template/SKILL.md` into a new `skills/<your-skill-name>/` directory
-3. Fill in the frontmatter and instructions
-4. Open a PR with a short description of what the skill does and why it's useful
+2. For a new skill: copy `template/SKILL.md` into `.claude/skills/<your-skill-name>/`
+3. For a new agent: create `.claude/agents/<your-agent-name>.md`
+4. Fill in the frontmatter and instructions
+5. Open a PR with a short description of what it does and why it's useful

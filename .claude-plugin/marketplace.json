@@ -15,10 +15,13 @@
       "source": "./",
       "strict": false,
       "skills": [
-        "./skills/pr-review"
+        "./.claude/skills/pr-review"
       ],
+      // should be updated everytime we add a new agent
       "agents": [
-        "./agents/code-reviewer.md"
+        "./.claude/agents/code-reviewer.md",
+        "./.claude/agents/documentation-manager.md",
+        "./.claude/agents/validation-agent.md"
       ]
     }
   ]
