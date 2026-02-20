@@ -66,6 +66,22 @@ Once installed, invoke it directly in Claude Code:
 
 Claude will also auto-invoke skills when the task matches the description.
 
+### Invoke an agent
+
+Agents are not slash commands — they are subagents Claude spawns on your behalf. Two ways to use them:
+
+**By name** — just describe what you want and Claude will pick the right agent:
+
+```
+Review src/auth.ts for security issues
+```
+
+**By explicit reference** — mention the agent file directly to be specific:
+
+```
+@agents/code-reviewer.md review this file
+```
+
 ## Skills in this repo
 
 | Skill | Description |
