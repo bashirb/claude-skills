@@ -15,7 +15,8 @@
       "source": "./",
       "strict": false,
       "commands": [
-        "./.claude/commands/primer.md"
+        "./.claude/commands/primer.md",
+        "./.claude/commands/commit-push-pr.md"
       ],
       "skills": [
         "./.claude/skills/pr-review"
