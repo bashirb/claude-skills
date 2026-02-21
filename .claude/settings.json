@@ -1,4 +1,23 @@
 {
+  "permissions": {
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)",
+      "Bash(unlink:*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/credentials)",
+      "Read(**/credentials.*)",
+      "Read(**/.aws/credentials)",
+      "Read(**/.aws/config)",
+      "Read(**/*secret*)",
+      "Read(**/*secrets*)",
+      "Read(**/*password*)",
+      "Read(**/*api_key*)",
+      "Read(**/*apikey*)",
+      "Read(**/airflow.cfg)",
+    ]
+  },
   "hooks": {
     "PostToolUse": [
       {
